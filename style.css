@@ -1,0 +1,423 @@
+@font-face {
+  font-family: manrope-reg;
+  src: url(assets/font/regular.otf)
+}
+
+@font-face {
+  font-family: manrope-bold;
+  src: url(assets/font/bold.otf)
+}
+
+body{
+  height: 100vh;
+  font-family: manrope-bold, Arial, Helvetica, sans-serif;
+  background-color: #201f1e;
+  padding: 0;
+  margin: 0;
+}
+
+.mainHeader {
+  display: flex;
+  width: 90%;
+  height: 100px;
+  color: white;
+  margin: 1% auto 0 auto;
+}
+
+.headerIcon {
+  height: 100px;
+  width: 6%;
+  background-image: url('assets/images/beer_icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.headerName{
+  font-size: 2.8rem;
+  text-align: center;
+  width: 20%;
+  margin: auto 0;
+}
+
+.mainContainer {
+  display: flex;
+  width: 90%;
+  height: 590px;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.mapContainer {
+  width: 75%;
+  padding-top: 40px;
+}
+.infoContainer{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+}
+.eventsContainer, .businessContainer, .destinationsContainer{
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabContainer {
+  display: flex;
+  color: white;
+  height: 40px;
+}
+.tab {
+  background-color: rgb(94, 94, 94);
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  padding: 7px 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+.tabBars {
+  width: 20%;
+}
+.tabEvents{
+  width: 25%;
+}
+.tabDestinations{
+  width: 55%;
+}
+.tab.tabSelected, .tab:hover{
+  background-color: white;
+  color: #201f1e;
+}
+
+.mapDisplay {
+  text-align: center;
+  height: 550px;
+  margin-left: 10px;
+}
+
+.rating {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 25px;
+}
+
+.business, .event {
+  font-family: manrope-reg;
+  background-size: 30px;
+  background-position: left;
+  background-repeat: no-repeat;
+  transition-duration: 500ms;
+  border-radius: 2px;
+  height: 22px;
+  color: rgb(53, 53, 53);
+  overflow: hidden;
+  width: 98%;
+  align-items: center;
+  margin: auto;
+}
+
+.address {
+  font-size: .85em;
+  color: blue;
+}
+
+.event{
+  background-color: lightgray;
+}
+.event-name {
+  margin-top: -2px;
+  text-align: center;
+}
+
+.business{
+  background-color: lightgray;
+}
+
+.businessName {
+  margin-top: -2px;
+  margin-bottom : 10px;
+}
+.destinationsAdded{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.collapsed{
+  flex: 0;
+  margin: auto;
+  border: 0;
+}
+.expanded {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  flex: 1;
+  max-height: 100%;
+  background-position: center;
+}
+.destination{
+  position: relative;
+  background-size: 30px;
+  background-position: left;
+  background-repeat: no-repeat;
+  transition-duration: 500ms;
+  border-radius: 2px;
+  height: 22px;
+  color: rgb(53, 53, 53);
+  overflow: hidden;
+  align-items: center;
+  margin: auto;
+}
+.destination > *{
+  text-align: left;
+  margin-left: 33px;
+}
+.destination.business, .destination.event{
+  max-height: 25px;
+  margin: 3px;
+  flex: 1;
+  background-position: left;
+}
+.businessContainer > .business:hover:not(.expanded) {
+  transform: scale(1.08);
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgb(252, 214, 118);
+}
+.eventsContainer > .event:hover:not(.expanded) {
+  transform: scale(1.08);
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgb(252, 214, 118);
+}
+.destinationsAdded > * {
+  transition: none;
+}
+/* WEATHER STYLING */
+.weatherContainer{
+  display: flex;
+  height: 140px;
+  width: 74%;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.weatherIcon {
+  height: 80px;
+  width: 80px;
+  background-position: center;
+  background-size: cover;
+}
+.weatherContainer > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 120px;
+  height: 120px;
+  font-family: manrope-reg;
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
+
+.weatherHeader {
+  font-size: 1.0rem;
+}
+
+.weather_box_text {
+  font-size: 1.2rem;
+}
+
+/* Google Autocomplete */
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+#target {
+  width: 345px;
+}
+.businessInfoWindow *, .eventInfoWindow *{
+  padding: 5px;
+}
+
+.route{
+  border-radius: 15px;
+  border: 2px solid #e8b503;
+  padding: 5px;
+}
+.addLocation:hover, .calculateRoute:hover{
+  background-color: #e8b503;
+}
+.calculateRoute{
+  display: flex;
+  height: 22px;
+  width: 150px;
+  border: 2px solid #e8b503;
+  border-radius: 20px;
+  padding: 5px;
+  margin-bottom: 3px;
+}
+.calculateRouteButton{
+  font-family: manrope-reg;
+  margin: auto;
+}
+
+.loading_screen {
+  font-family: manrope-bold;
+  display: flex;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #201f1e;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+.loading_screen_button {
+  border: 1px solid white;
+  font-size: 50%;
+  width: 14%;
+  text-align: center;
+  left: 50%;
+}
+.loading_icon {
+  width: 400px;
+  height: 300px;
+  background-image: url('assets/images/loading2.gif');
+  margin: 0 auto;
+}
+
+.welcome_text {
+  margin: auto;
+  font-size: 600%;
+  color: white;
+}
+
+.slide_to_top {
+  top: -100%;
+  transition-duration: 1s;
+}
+
+.hidden {
+  display: none;
+}
+
+.event-name, .businessName {
+  margin-top: 1px;
+}
+
+.destination button {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+}
+
+.delete_button {
+  display: flex;
+  position: relative;
+  border: 2px solid #e8b503;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.delete_button:hover {
+  background-color: #e8b503;
+}
