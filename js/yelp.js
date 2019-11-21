@@ -30,7 +30,7 @@ class Yelp {
         'url': `php/yelp.php`,
         'dataType': 'JSON',
         'headers': {
-          "Authorization": 'Bearer a_BrDbXlVK8u3TbVbpFRC9EP6Ye_73iUJQvTRDbJBrbD_e0t9x4OqWni0XZK8hE_VLr2GLWHBfgrEDdY6jZO16i1Gq5tMTBIBczxbqU1e2P3-cOOmkTUVgNE0TiAXXYx',
+          "Authorization": this.apiKey,
         },
         data: {
           'term': 'bars',
@@ -44,6 +44,7 @@ class Yelp {
           resolve(this.businessesData);
         },
         error: (data) => {
+          console.log(data)
           console.log('There was an error recieving data on the yelp object.');
           reject(data);
         }

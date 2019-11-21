@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bar Crawl</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/marker.js"></script>
+  <script src="js/yelp.js"></script>
+  <script src="js/eventbrite.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/maps.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="loading_screen">
+      <div class="welcome_text">
+        <div class="welcomeTitle">Bar Crawl</div>
+        <div class="loading_icon"></div>
+      </div>
+    </div>
+  <header class="mainHeader">
+    <div class="headerIcon"></div>
+    <div class="headerName">Bar Crawl</div>
+    <div class="weatherContainer">
+    </div>
+  </header>
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+  <div class="mainContainer">
+    <div class="infoContainer">
+      <div class="tabContainer">
+        <div class="tab tabBars tabSelected">Bars</div>
+        <div class="tab tabEvents">Events</div>
+        <div class="tab tabDestinations">Destinations</div>
+      </div>
+      <div class="businessContainer bars"></div>
+      <div class="eventsContainer events hidden"></div>
+      <div class="destinationsContainer destinations hidden">
+        <div id="directionsPanel" class="destinationsAdded">
+        </div>
+        <div class="calculateRoute">
+          <div class="calculateRouteButton">Calculate Route</div>
+        </div>
+      </div>
+    </div>
+    <div class="mapContainer">
+      <div id="mapDisplay" class="mapDisplay">
+        Map goes here
+      </div>
+    </div>
+  </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries=places"></script>
+</body>
+
+</html>
