@@ -27,7 +27,7 @@ class Yelp {
   retrieveData() {
     return new Promise((resolve, reject) => {
       $.ajax({
-        'url': `php/yelp.php`,
+        'url': `https://api.yelp.com/v3/businesses/search`,
         'dataType': 'JSON',
         'headers': {
           "Authorization": this.apiKey,

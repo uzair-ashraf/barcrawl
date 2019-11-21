@@ -21,7 +21,7 @@ class Eventbrite {
       var today = new Date();
       var dateInput = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() + 7}T${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
       $.ajax({
-        url: 'php/eventbrite.php',
+        url: 'https://www.eventbriteapi.com/v3/events/search',
         method: 'GET',
         dataType: 'JSON',
         headers: {
